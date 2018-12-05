@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,6 +13,9 @@ public class BeanInvoker {
 	private List<MultiBeanFace> list;
 	@Autowired
 	private Map<String, MultiBeanFace> map;
+	@Autowired
+	@Qualifier("beanImplThree")
+	private MultiBeanFace multiBeanFace;
 
 	public void say() {
 		if (list != null && list.size() != 0) {
@@ -30,6 +34,9 @@ public class BeanInvoker {
 		} else {
 			System.out.println("map<MultiBeanFace>==null=========");
 		}
+		
+		System.out.println("=======================");
+		System.out.println(multiBeanFace.getClass().getName());
 	}
 
 }
