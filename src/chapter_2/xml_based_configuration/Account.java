@@ -1,4 +1,4 @@
-package chapter_2;
+package chapter_2.xml_based_configuration;
 
 import java.sql.Date;
 

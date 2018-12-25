@@ -1,4 +1,4 @@
-package chapter_2;
+package chapter_2.annotation_based_configuration;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.springframework.jdbc.support.incrementer.AbstractColumnMaxValueIncrementer;
-
+import org.springframework.stereotype.Repository;
+@Repository
 public class AccountDaoImpl implements AccountDao {
 	private Map<Long, Account> accountsMap = new HashMap<>();
 
@@ -32,19 +33,16 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public void insert(Account account) {
-		// TODO Auto-generated method stub
 		accountsMap.put(account.getId(), account);
 	}
 
 	@Override
 	public void update(Account account) {
-		// TODO Auto-generated method stub
 		accountsMap.put(account.getId(), account);
 	}
 
 	@Override
 	public void update(List<Account> accounts) {
-		// TODO Auto-generated method stub
 		for (Account account : accounts) {
 			update(account);
 		}
@@ -52,20 +50,16 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public void delete(long id) {
-		// TODO Auto-generated method stub
 		accountsMap.remove(id);
 	}
 
 	@Override
 	public Account find(long id) {
-		// TODO Auto-generated method stub
-
 		return accountsMap.get(id);
 	}
 
 	@Override
 	public List<Account> find(List<Long> accountIds) {
-		// TODO Auto-generated method stub
 		List<Account> accounts = new ArrayList<>();
 		for (Long id : accountIds) {
 			accounts.add(accountsMap.get(id));
@@ -75,7 +69,6 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public List<Account> find(String ownerName) {
-		// TODO Auto-generated method stub
 		List<Account> accounts = new ArrayList<>();
 		for (Account account : accountsMap.values()) {
 			if (ownerName.equals(account.getOwnerName())) {

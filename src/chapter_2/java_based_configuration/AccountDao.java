@@ -1,4 +1,4 @@
-package chapter_2;
+package chapter_2.java_based_configuration;
 
 import java.util.List;
 
