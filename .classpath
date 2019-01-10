@@ -66,5 +66,8 @@
 	<classpathentry kind="lib" path="/Users/dingwenjie/git-tutorial/SpringLibs/spring-framework-3.2.RELEASE/libs/spring-webmvc-portlet-3.2.9.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/dingwenjie/git-tutorial/SpringLibs/spring-framework-3.2.RELEASE/libs/spring-webmvc-portlet-3.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/Users/dingwenjie/git-tutorial/SpringLibs/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="/Users/dingwenjie/git-tutorial/SpringLibs/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/dingwenjie/git-tutorial/SpringLibs/aspectjrt-1.7.4.jar"/>
+	<classpathentry kind="lib" path="/Users/dingwenjie/git-tutorial/SpringLibs/aspectjweaver-1.7.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
