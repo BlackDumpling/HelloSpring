@@ -11,7 +11,8 @@
 		class="com.flychicken.sp.aop.sehema.advice.MoocAspect"></bean>
 
 	<bean id="aspectBiz"
-		class="com.flychicken.sp.aop.sehema.advice.biz.AspectBiz"></bean>
+		class="com.flychicken.sp.aop.sehema.advice.biz.AspectBiz"
+		scope="singleton"></bean>
 
 	<aop:config>
 		<aop:aspect id="moocAspectAop" ref="moocAspect">
@@ -19,10 +20,16 @@
 				expression="execution(* com.flychicken.sp.aop.sehema.advice.biz.*Biz.*(..))"
 				id="moocPointcut" />
 			<aop:before method="before" pointcut-ref="moocPointcut" />
-			<aop:around method="around" pointcut-ref="moocPointcut"/>
-			
-				<aop:around method="aroundInit" pointcut="execution(* com.flychicken.sp.aop.sehema.advice.biz.AspectBiz.init(String, int))  
- 							and args(name,age)"/>
+			<aop:around method="around" pointcut-ref="moocPointcut" />
+
+			<aop:around method="aroundInit"
+				pointcut="execution(* com.flychicken.sp.aop.sehema.advice.biz.AspectBiz.init(String, int))  
+ 							and args(name,age)" />
+			<aop:declare-parents
+				types-matching="com.flychicken.sp.aop.sehema.advice.biz.*()"
+				implement-interface="com.flychicken.sp.aop.sehema.advice.Fit"
+				default-impl="com.flychicken.sp.aop.sehema.advice.FitImpl" />
+
 		</aop:aspect>
 	</aop:config>
 
